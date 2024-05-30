@@ -1,0 +1,195 @@
+.log {
+    position: absolute;
+    left: 175px;
+}
+#All-Shipment {
+    font-size: x-large;
+    color: black;
+    font-family:  Arial, sans-serif;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.create-shipment {
+    position: absolute;
+    right: 2%;
+}
+
+.create-shipment button{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 10%;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+}
+#stats {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-top: 2%;
+}
+
+
+.box {
+    display: flex;
+    border: black;
+    border-radius: 10px;
+    border: 1px;
+    margin-top: 0%;
+    margin-right: 1.5%;
+    border-style: solid;
+    padding: 10px 50px 10px 10px ;
+    width: 170px;
+    height: 55px;
+    border-color: rgb(189, 189, 189);
+}
+
+.box img {
+    left:0%;
+    width: 3.5vw;
+    height: auto;
+}
+
+#bigger {
+    width: 125px;
+    font-size: 100%;
+}
+
+.filter {
+    margin-top: 2%;
+    display: flex;
+}
+.filter-1 {
+    width: 17vw;
+    height: 24px;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(189, 189, 189);
+    border-radius: 4px;
+    display: flex;
+    color: rgb(137, 137, 137);
+    margin-right: 10px;
+}
+
+
+.filter-1 input{
+    width: 16vw;
+    border-style: none;
+    font-size: x-small;
+    padding: 5px 5px 5px 5px;
+}
+
+.filter-1 i{
+    font-size: small;
+    padding: 5px 5px 10px 5px;
+}
+.filter-2 i{
+    font-size: small;
+    padding: 5px 5px 10px 5px;
+}
+.filter-2 {
+    width: 11vw;
+    height: 24px;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(189, 189, 189);
+    border-radius: 4px;
+    display: flex;
+    color: rgb(137, 137, 137);
+    margin-right: 10px;
+}
+.filter-2 input{
+    width: 10vw;
+    border-style: none;
+    font-size: x-small;
+    padding: 5px 5px 5px 5px;
+}
+.f-side {
+    display: flex;
+    position: absolute; 
+    right: 13%;
+}
+.f-side-1 {
+    display: flexbox;
+    align-items: center;
+    width: 100px;
+    font-size: small;
+    height: 24px;
+    border: 1px;
+    border-style: dashed;
+    border-color: rgb(189, 189, 189);
+    border-radius: 4px;
+    padding: 5px 5px 5px 10px;
+    display: flex;
+    color: rgb(137, 137, 137);
+    margin-right: 10px;
+    box-shadow: 0px 2px 2px rgba(143, 143, 143, 0.5);
+}
+.f-side-2 {
+    display: flexbox;
+    align-items: center;
+    width: 30px;
+    font-size: small;
+    height: 24px;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(189, 189, 189);
+    border-radius: 4px;
+    padding: 5px 0px 5px 15px;
+    display: flex;
+    color: rgb(137, 137, 137);
+    margin-right: 10px;
+    box-shadow: 0px 2px 2px rgba(193, 193, 193, 0.5);
+}
+/* Table */
+.content-table {
+    position: relative;
+    top: 230px;
+    margin-left: 165px;
+    min-width: 400px;
+    border-collapse: collapse;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(236, 236, 236);
+    border-radius: 5px;
+}
+
+.content-table thead tr{
+    background-color: rgb(233, 233, 233);
+    align-items: left;
+    font-weight: bold;
+}
+
+.content-table th {
+    padding: 15px 38px;
+    font-size: x-small;
+}
+.content-table td {
+    padding: 15px 38px;
+    font-size: x-small;
+    align-items: center;
+}
+.content-table tr:hover {   
+    background-color: #f4f4f4; 
+}
+.content-table td img{
+    width: 20px;
+}
+.content-table td i{
+    font-size: xx-small;
+    height: 0.3px;
+    color: #05ca02;
+}
+
+#red {
+    color: red;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid beige;
+}
