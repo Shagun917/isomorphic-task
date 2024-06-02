@@ -20,7 +20,6 @@ const App = () => {
     setShowLoading(true);
     setTimeout(() => {
       setShowLoading(false);
-      setShowSecondComponent(true);
     }, 2000);
   };
   const handleColorChange = () => {
