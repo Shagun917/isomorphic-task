@@ -1,16 +1,73 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './Logistics.css'
+import Datepicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
-const Logistics = ({onStateChange, tab}) => {
-  
+const Logistics = ({onStateChange, tab, Mode}) => {
+    const [selectedDate, setDate] = useState(null);
     const handleRowSelect = () => {
         onStateChange();
         tab();
     };
+    useEffect(() => {
+        let textColor;
+        let th;
+        let bg;
+        let sb;
+        let nv;
+        let rt;
+        if(Mode == true) {
+            textColor = '#fff';
+            bg = '#1c1c1c';
+            th = '#484848';
+            sb = '#131313';
+            nv = 'white';
+            rt = 'white';
+        } else {
+            textColor = '#6a6a6a';
+            bg = 'white';
+            th = '#d2d2d2';
+            sb = '#f3f3f3';
+            nv = 'black';
+            rt = 'black';
+        }
+        const collection = document.getElementsByTagName("tr");
+        const collection2 = document.getElementsByTagName("a");
+        const collection3 = document.getElementsByTagName("th");
+        const collection4 = document.getElementsByTagName("input");
+        const collection6 = document.getElementsByClassName('right-three');
+        const collection5 = document.getElementsByClassName("Logog");
+        const c6 = document.getElementsByClassName("sidebar");
 
+
+        for (let i = 0; i < collection.length; i++) {
+        collection[i].style.color = textColor;
+        collection[i].style.borderBottomColor = th;
+        }
+        for (let i = 0; i < collection2.length; i++) {
+            collection2[i].style.color = textColor;
+        }
+        for (let i = 0; i < collection3.length; i++) {
+            collection3[i].style.backgroundColor = th;
+            }
+        for (let i = 0; i < collection4.length; i++) {
+            collection4[i].style.backgroundColor = bg;
+            collection4[i].style.color = textColor;
+        }
+        for (let i = 0; i < collection5.length; i++) {
+            collection5[i].style.color = nv;
+            }
+            for (let i = 0; i < collection6.length; i++) {
+                collection6[i].style.color = rt;
+                }
+                for (let i = 0; i < c6.length; i++) {
+                    c6[i].style.backgroundColor = sb;
+                }
+    }, [Mode]);
     return (
         <>
         <div className='log'>
+            <div className='black-line'></div>
             <p id="All-Shipment">All Shipments</p>
             <p id="dash">Dashboard</p>
             <div className="boxes">
@@ -55,13 +112,21 @@ const Logistics = ({onStateChange, tab}) => {
                     <i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder='Search by anything '/>
                     </div>
                     <div className='filter-1'>
-                    <i class="fa-regular fa-calendar"></i><input type="text" placeholder='Select created date '/>
+                    <i class="fa-regular fa-calendar"></i><Datepicker selected={selectedDate} onChange={date=>setDate(date)} className='date'/>
                     </div>
                     <div className='filter-2'>
-                    <i class="fa-regular fa-calendar"></i><input type="text" placeholder='Select status '/>
+                    <i class="fa-regular fa-calendar"></i><input type="text" placeholder='Select status ' list='scripts'/>
+                    <datalist id='scripts'>
+                        <option value="Hired" />
+                        <option value="Not Hired" />
+                    </datalist>
                     </div>
                     <div className='filter-2'>
-                    <i class="fa-regular fa-calendar"></i><input type="text" placeholder='Select payment method '/>
+                    <i class="fa-regular fa-calendar"></i><input name = 'section'placeholder='Filter' list='scripts2'/>
+                    <datalist id='scripts2'>
+                        <option value="Shagun Raj" />
+                        <option value="Other Employees" />
+                    </datalist>
                     </div>
                     <div className='f-side'>
                         <div className='f-side-1'>
@@ -91,15 +156,14 @@ const Logistics = ({onStateChange, tab}) => {
                     <th>Destination <i class="fa-solid fa-angle-down"></i></th>
                     <th>Payment method <i class="fa-solid fa-angle-down"></i></th>
                     <th>Status <i class="fa-solid fa-angle-down"></i></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td style={{width: '13%'}}><img src="./src/assets/Photo.png" id='photo1'/> Tracy Rempel</td>
+                    <td style={{width: '14%'}}><img src="./src/assets/Photo2.png"/> TPrincila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Google Pay</td>
@@ -108,8 +172,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png"  id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>PhonePe</td>
@@ -118,8 +182,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png" id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Google Pay</td>
@@ -128,8 +192,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png" id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>PhonePe</td>
@@ -138,8 +202,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png"  id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Paytm</td>
@@ -148,8 +212,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png"  id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Google Pay</td>
@@ -158,8 +222,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png"  id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Paytm</td>
@@ -168,8 +232,8 @@ const Logistics = ({onStateChange, tab}) => {
                 <tr onClick={() => handleRowSelect()}>
                     <td>HHP6411</td>
                     <td>09 Jun, 2019</td>
-                    <td>Tracy Rempel</td>
-                    <td>Princila Price</td>
+                    <td><img src="./src/assets/Photo.png"  id='photo1'/> Tracy Rempel</td>
+                    <td><img src="./src/assets/Photo2.png"/> Princila Price</td>
                     <td>Kazakhastan</td>
                     <td>hongkong</td>
                     <td>Google Pay</td>

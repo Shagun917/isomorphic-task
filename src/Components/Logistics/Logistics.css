@@ -1,6 +1,11 @@
 .log {
     position: absolute;
     left: 175px;
+    /* background-color: rgb(176, 176, 176); */
+}
+
+body {
+    transition: all 0.3s ease;
 }
 #All-Shipment {
     font-size: x-large;
@@ -65,8 +70,8 @@
     display: flex;
 }
 .filter-1 {
-    width: 17vw;
-    height: 24px;
+    width: 18.3vw;
+    height: 29px;
     border: 1px;
     border-style: solid;
     border-color: rgb(189, 189, 189);
@@ -75,7 +80,6 @@
     color: rgb(137, 137, 137);
     margin-right: 10px;
 }
-
 
 .filter-1 input{
     width: 16vw;
@@ -86,15 +90,17 @@
 
 .filter-1 i{
     font-size: small;
+    margin-top: 3px;
     padding: 5px 5px 10px 5px;
 }
 .filter-2 i{
     font-size: small;
+    margin-top: 3px;
     padding: 5px 5px 10px 5px;
 }
 .filter-2 {
     width: 11vw;
-    height: 24px;
+    height: 29px;
     border: 1px;
     border-style: solid;
     border-color: rgb(189, 189, 189);
@@ -153,10 +159,6 @@
     margin-left: 165px;
     min-width: 400px;
     border-collapse: collapse;
-    border: 1px;
-    border-style: solid;
-    border-color: rgb(236, 236, 236);
-    border-radius: 5px;
 }
 
 .content-table thead tr{
@@ -173,9 +175,10 @@
     padding: 15px 38px;
     font-size: x-small;
     align-items: center;
+    cursor: pointer;
 }
-.content-table tr:hover {   
-    background-color: #f4f4f4; 
+.content-table tr:hover {
+    opacity: 50%;
 }
 .content-table td img{
     width: 20px;
@@ -192,4 +195,21 @@
 
 .content-table tbody tr {
     border-bottom: 1px solid beige;
+    padding: 0;
+}
+tr:first-child th:first-child{
+    border-top-left-radius: 15px;
+}
+tr:first-child th:last-child{
+    border-top-right-radius: 15px;
+}
+
+#photo1 {
+    width: 14px;
+    height: auto;
+    margin-right: 3px;
+}
+
+.date {
+    height: 18px;
 }

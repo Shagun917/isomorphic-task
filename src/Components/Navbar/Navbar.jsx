@@ -1,26 +1,33 @@
 import React from 'react'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({onModeChange}) => {
+    let c = 'black';
+    const handleModeSelect = () => {
+        onModeChange();
+        if(c == 'white')
+            c = 'black';
+        else
+            c = 'white';
+    };
+
     return (
         <>
         <div className='nav'>
-            <i class="fa-solid fa-lines-leaning"></i>
-            isomorphic
         <div>
             <input id="search" type="text" placeholder='Type what you are looking for... '/>
         </div>
             <div className='right-three'>
             <div className='two'>
-            <i class="fa-regular fa-message"></i>
+            <i class="fa-regular fa-message" id='mode'></i>
+            </div>
+            <div className='two' id='mode'>
+            <i class="fa-regular fa-sun" onClick={() => handleModeSelect()}></i>
             </div>
             <div className='two'>
-            <i class="fa-regular fa-sun"></i>
+            <i class="fa-solid fa-bell" id='mode'></i>
             </div>
-            <div className='two'>
-            <i class="fa-solid fa-bell"></i>
-            </div>
-            <img src="./src/assets/profile.jpg" />
+            <img src="./src/assets/profile.png" id='mode' className='profiles'/>
         </div>
             </div>    
         </>

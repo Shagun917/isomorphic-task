@@ -11,8 +11,9 @@ const App = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [showLoading, setShowLoading] = useState(false);
   const [showSecondComponent, setShowSecondComponent] = useState(false);
-  const [Color1, setColor1] = useState('blue');
+  const [Color1, setColor1] = useState('#0f53d2');
   const [Color2, setColor2] = useState('grey');
+  const [Mode, setMode] = useState(false);
 
   const handleStateChange = () => {
     setIsStateUpdated(true);
@@ -20,17 +21,22 @@ const App = () => {
     setShowLoading(true);
     setTimeout(() => {
       setShowLoading(false);
+      setShowSecondComponent(true);
     }, 2000);
   };
+
   const handleColorChange = () => {
     setColor1('grey');
-    setColor2('blue');
+    setColor2('#0f53d2');
+  };
+  const handleModeChange = () => {
+    setMode(!Mode);
   };
   return (
       <>
-        <Sidebar Color1={Color1} Color2={Color2}/>
-        <Navbar />
-        {showNavbar && <Logistics onStateChange={handleStateChange } tab={handleColorChange}/>}
+        <Sidebar Color1={Color1} Color2={Color2} Mode={Mode}/>
+        <Navbar onModeChange={handleModeChange} />
+        {showNavbar && <Logistics onStateChange={handleStateChange } tab={handleColorChange} Mode={Mode}/>}
         {showLoading && <Load/>}
         {showSecondComponent && <Shipment_Details/>}
       </>
