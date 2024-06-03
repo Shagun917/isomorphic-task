@@ -2,9 +2,6 @@ import React, {useEffect, useState} from 'react'
 import './Logistics.css'
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider'
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
-import {DatePicker} from '@mui/x-date-pickers/DatePicker';
 
 const Logistics = ({onStateChange, tab, Mode}) => {
     const [selectedDate, setDate] = useState(null);
@@ -114,10 +111,8 @@ const Logistics = ({onStateChange, tab, Mode}) => {
                     <div className='filter-1'>
                     <i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder='Search by anything '/>
                     </div>
-                    <div>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} color="black">
-                        <DatePicker label="Select-Date" color="black"/>
-                        </LocalizationProvider>
+                    <div className='filter-1'>
+                    <i class="fa-regular fa-calendar"></i><Datepicker selected={selectedDate} onChange={date=>setDate(date)} className='date'/>
                     </div>
                     <div className='filter-2'>
                     <i class="fa-regular fa-calendar"></i><input type="text" placeholder='Select status ' list='scripts'/>

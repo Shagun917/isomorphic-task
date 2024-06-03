@@ -210,9 +210,6 @@ tr:first-child th:last-child{
     margin-right: 3px;
 }
 
-#date {
+.date {
     height: 18px;
-    background-color: white !important;
-    color: white !important;
-    border-color: white !important;
 }
